@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 class Reverse {
     public static String reverseChars(String word) {
@@ -29,11 +30,13 @@ class Reverse {
 
 public class Main {
     public static void main(String[] args) {
-        String revChar = Reverse.reverseChars("Hello world");
-        String revWord = Reverse.reverseWords("Hello world kids people");
+        Scanner scanner=new Scanner(System.in);
+        String s = scanner.nextLine();
+        String revChar = Reverse.reverseChars(s);
+        String revWord = Reverse.reverseWords(s);
 
-        System.out.println(revChar);
-        System.out.println(revWord);
+        System.out.println("Reversing Char: "+revChar);
+        System.out.println("Reversing Words: "+revWord);
 
     }
 }
