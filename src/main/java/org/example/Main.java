@@ -11,12 +11,24 @@ class Reverse {
         }
         return String.valueOf(revChars);
     }
+
+    public static String reverseWords(String word) {
+        String[] words = word.split(" ");
+        String[] revWords=new String[words.length];
+        for (int i=words.length;i>0;i--){
+            revWords[words.length-i]=words[i-1];
+        }
+        String string = revWords.join();
+        return string;
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        String word = Reverse.reverseChars("Hello");
-        System.out.println(word);
+        String revChar = Reverse.reverseChars("Hello world");
+        String revWord = Reverse.reverseWords("Hello world");
+        System.out.println(revChar);
+        System.out.println(revWord);
 
     }
 }
