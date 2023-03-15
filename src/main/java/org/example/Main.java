@@ -25,18 +25,17 @@ class Reverse {
                 .replace("]", "")
                 .replace(",", "");
     }
-
 }
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+
+        Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         String revChar = Reverse.reverseChars(s);
         String revWord = Reverse.reverseWords(s);
 
-        System.out.println("Reversing Char: "+revChar);
-        System.out.println("Reversing Words: "+revWord);
-
+        System.out.println("Reversing Char: " + revChar);
+        System.out.println("Reversing Words: " + revWord);
     }
 }
