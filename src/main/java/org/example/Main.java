@@ -18,7 +18,10 @@ class Reverse {
         for (int i=words.length;i>0;i--){
             revWords[words.length-i]=words[i-1];
         }
-        String string = revWords.join();
+        String string1 = Arrays.toString(revWords);
+        String string= string1.replace("[","")
+                .replace("]","")
+                .replace(',',' ');
         return string;
     }
 }
@@ -26,7 +29,7 @@ class Reverse {
 public class Main {
     public static void main(String[] args) {
         String revChar = Reverse.reverseChars("Hello world");
-        String revWord = Reverse.reverseWords("Hello world");
+        String revWord = Reverse.reverseWords("Hello world kids people");
         System.out.println(revChar);
         System.out.println(revWord);
 
