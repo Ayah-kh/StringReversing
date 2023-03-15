@@ -1,18 +1,22 @@
 package org.example;
 
+import java.util.Arrays;
+
 class Reverse {
-    public static void reverseChars(String word){
+    public static String reverseChars(String word){
         char[] chars = word.toCharArray();
+        char[] revChars=new char[chars.length];
         for (int i=chars.length;i>0;i--){
-            System.out.print(chars[i-1]);
+            revChars[chars.length-i]=chars[i-1];
         }
-//        return word;
+        return String.valueOf(revChars);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Reverse.reverseChars("Hello");
+        String word = Reverse.reverseChars("Hello");
+        System.out.println(word);
 
     }
 }
