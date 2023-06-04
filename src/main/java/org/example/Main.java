@@ -18,6 +18,7 @@ class Reverse {
 
         return Stream.of(word.split(""))
                 .reduce("", (acc, e) -> e+acc);
+
     }
 
     public static String reverseWords(String word) {
