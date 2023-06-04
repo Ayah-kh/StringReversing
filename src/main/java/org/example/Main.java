@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 class Reverse {
     public static String reverseChars(String word) {
@@ -11,6 +12,12 @@ class Reverse {
             revChars[chars.length - i] = chars[i - 1];
         }
         return String.valueOf(revChars);
+    }
+
+    public static String reverseCharsStream(String word) {
+
+        return Stream.of(word.split(""))
+                .reduce("", (acc, e) -> e+acc);
     }
 
     public static String reverseWords(String word) {
@@ -25,17 +32,29 @@ class Reverse {
                 .replace("]", "")
                 .replace(",", "");
     }
+
+    public static String reverseWordsStream(String word) {
+        return Stream.of(word.split(" "))
+                .reduce("", (acc, e) -> e+" "+acc);
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        String s = scanner.nextLine();
+        String s = "Hello World";
         String revChar = Reverse.reverseChars(s);
         String revWord = Reverse.reverseWords(s);
 
         System.out.println("Reversing Char: " + revChar);
         System.out.println("Reversing Words: " + revWord);
+
+        String revChar2 = Reverse.reverseCharsStream(s);
+        String revWord2 = Reverse.reverseWordsStream(s);
+
+        System.out.println("Reversing Char Using Stream: " + revChar2);
+        System.out.println("Reversing Words Using Stream: " + revWord2);
     }
 }
